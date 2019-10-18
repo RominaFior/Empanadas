@@ -1,0 +1,17 @@
+<h1 class="animated fadeIn fast">NUESTRAS ESPECIALIDADES</h1>
+<hr />
+<div class="card-columns animated fadeIn">
+    <div class="card" *ngFor="let empanada of empanadas; let i = index">
+        <img [src]="empanada.img" class="card-img-top" alt="empanada.nombre" />
+        <div class="card-body">
+            <h5 class="card-title">{{ empanada.nombre }}</h5>
+            <p class="card-text">
+                {{ empanada.desc }}
+            </p>
+            <p class="card-text">
+                <small class="text-muted">{{ empanada.precio }}</small>
+            </p>
+            <button class="btn btn-outline-secondary btn-block">La quiero!</button>
+        </div>
+    </div>
+</div>

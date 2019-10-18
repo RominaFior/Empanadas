@@ -3,15 +3,12 @@ import { NgModule } from "@angular/core";
 
 import { InicioComponent } from "./components/inicio/inicio.component";
 import { AboutComponent } from "./components/about/about.component";
-/*import { Name2Component } from './';
-import { Name4Component } from './';
-import { PageNotFoundComponent } from './'; */
+import { EmpanadasComponent } from "./components/empanadas/empanadas.component";
 
 const APP_ROUTES: Routes = [
   { path: "home", component: InicioComponent },
   { path: "about", component: AboutComponent },
-  /*  { path: 'path2', component: Name2Component },
-  { path: 'path4', component: Name4Component }, */
+  { path: "empanadas", component: EmpanadasComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" }
 ];
 
