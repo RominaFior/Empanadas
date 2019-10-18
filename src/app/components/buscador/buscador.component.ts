@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { EmpanadasService, Empanada } from "../../services/empanadas.service";
 
@@ -9,6 +9,9 @@ import { EmpanadasService, Empanada } from "../../services/empanadas.service";
 export class BuscadorComponent implements OnInit {
   empanadas: Empanada[] = [];
   termino: string;
+  @Input() index: number;
+  @Input() empanada: string;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private empanadaService: EmpanadasService,
@@ -21,8 +24,8 @@ export class BuscadorComponent implements OnInit {
       this.empanadas = this.empanadaService.buscador(params["term"]);
     });
   }
-  verEmpanada(idx) {
-    this.router.navigate(["/empanada", idx]);
-    console.log(idx);
+  verEmpanada() {
+    this.router.navigate(["/empanada", this.index]);
+    console.log(this.index);
   }
 }
