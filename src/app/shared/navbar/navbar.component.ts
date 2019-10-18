@@ -10,4 +10,8 @@ export class NavbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  buscarEmpanada(termino) {
+    console.log(termino)
+  }
 }

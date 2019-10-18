@@ -18,11 +18,11 @@
                 <a class="nav-link" [routerLink]="['/about']">Quiénes somos</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Relleno..." aria-label="Search" />
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+        <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Relleno..." aria-label="Search" (keyup.enter)="buscarEmpanada(buscarTexto.value)" #buscarTexto/>
+            <button class="btn btn-outline-light my-2 my-sm-0" type="button" (click)="buscarEmpanada(buscarTexto.value)" >
         Buscar
       </button>
-        </form>
+        </div>
     </div>
 </nav>

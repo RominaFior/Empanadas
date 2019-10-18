@@ -74,7 +74,23 @@ export class EmpanadasService {
   getEmpanadas(): Empanada[] {
     return this.empanadas;
   }
+  getEmpanada(id: string) {
+    return this.empanadas[id];
+  }
+
+  buscarEmpanada(termino: string): Empanada[] {
+    let empanadasArr: Empanada[] = [];
+    termino = termino.toLocaleLowerCase();
+    for (const empanada of this.empanadas) {
+      let nombre = empanada.nombre.toLocaleLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        empanadasArr.push(empanada);
+      }
+    }
+    return empanadasArr;
+  }
 }
+
 export interface Empanada {
   nombre: string;
   desc: string;

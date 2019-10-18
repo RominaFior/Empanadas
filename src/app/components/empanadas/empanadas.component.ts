@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { EmpanadasService, Empanada } from "../../services/empanadas.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-empanadas",
@@ -8,10 +9,15 @@ import { EmpanadasService, Empanada } from "../../services/empanadas.service";
 })
 export class EmpanadasComponent implements OnInit {
   empanadas: Empanada[] = [];
-  constructor(private empanadasService: EmpanadasService) {}
+  constructor(
+    private empanadasService: EmpanadasService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.empanadas = this.empanadasService.getEmpanadas();
-    console.log(this.empanadas);
+  }
+  verEmpanada(idx: number) {
+    this.router.navigate(["/empanada", idx]);
   }
 }
