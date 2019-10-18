@@ -26,6 +26,5 @@ export class BuscadorComponent implements OnInit {
   }
   verEmpanada() {
     this.router.navigate(["/empanada", this.index]);
-    console.log(this.index);
   }
 }
