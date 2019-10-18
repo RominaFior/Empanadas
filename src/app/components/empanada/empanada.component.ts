@@ -16,8 +16,6 @@ export class EmpanadaComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params["id"]);
-
       this.empanada = this.empanadasService.getEmpanada(params["id"]);
     });
   }

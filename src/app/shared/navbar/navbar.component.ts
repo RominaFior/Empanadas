@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { EmpanadasService } from "../../services/empanadas.service";
+import { EmpanadasService, Empanada } from "../../services/empanadas.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-navbar",
@@ -7,11 +8,16 @@ import { EmpanadasService } from "../../services/empanadas.service";
   providers: [EmpanadasService]
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  empanada: any = {};
+  empanadasEncontradas: Empanada[] = [];
+  constructor(
+    private empanadasService: EmpanadasService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
-  buscarEmpanada(termino) {
-    console.log(termino)
+  buscarEmpanada(term) {
+    this.router.navigate(["/buscador", term]);
   }
 }

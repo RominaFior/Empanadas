@@ -14,6 +14,7 @@ import { InicioComponent } from "./components/inicio/inicio.component";
 import { AboutComponent } from "./components/about/about.component";
 import { EmpanadasComponent } from "./components/empanadas/empanadas.component";
 import { EmpanadaComponent } from './components/empanada/empanada.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EmpanadaComponent } from './components/empanada/empanada.component';
     InicioComponent,
     AboutComponent,
     EmpanadasComponent,
-    EmpanadaComponent
+    EmpanadaComponent,
+    BuscadorComponent
   ],
   imports: [BrowserModule, APP_ROUTING],
   providers: [EmpanadasService],
